@@ -1,37 +1,81 @@
-class Human:
-	def __init__(self, name):
-		self.name = name
-		self.appearance = 5
-		self.status = False
-	def live(self):
-		print(self.name, 'is alive')
-	def eat(self):
-		print('Eating time')
+num1 = num2 = sign = ''
+while num1 == '' or num2 == '' or sign == '':
+	try:
+		num1 = int(input('Number1: '))
+		sign = input('Sign: ')
+		num2 = int(input('Number2: '))
+		if num2 == 0 and sign == '/':
+			raise ZeroDivisionError
+	except ValueError:
+		print('Wrong value')
+	except ZeroDivisionError:
+		sign = ''
+		print("You can't divide by zero")
+	except:
+		print('Something is wrong!')
+	if sign == '+':
+		print(f"{num1} + {num2} = {num1+num2}")
 
-class Woman(Human):
-	def live(self):
-		super().live()
-		print('What a wonderful day of', self.name)
-	def cook(self):
-		print(self.name, 'is cooking')
+# Добавить оcтальные операции. Если должны произойти какие-то еще исключительные операции, то обработать их в try-except.
+# Сделать проверку на введенный знак. Доступны только арифметические!
+# Попросить пользователя ввести имя. Если он вводит числа, то обрабатываем данную исключительную ситуацию и пишем ему, что в имени цифр не может быть
+	
+
+
+# try:
+# 	a = input()
+# 	if a == 'stop':
+# 		raise SyntaxError
+# 	print(5/0)
+
+# except SyntaxError:
+# 	print('You said forbidden word')
+# except ZeroDivisionError:
+# 	print("You can't divide by zero")
+# except:
+# 	print("Error")
+	
+# print('Hello world!')
+
+
+
+# class Human:
+# 	def __init__(self, name):
+# 		self.name = name
+# 		self.appearance = 5
+# 		self.status = False
+# 	def live(self):
+# 		print(self.name, 'is alive')
+# 	def eat(self):
+# 		print('Eating time')
+
+# class Woman(Human):
+# 	def live(self):
+# 		super().live()
+# 		print('What a wonderful day of', self.name)
+# 	def cook(self):
+# 		print(self.name, 'is cooking')
 		
-class Man(Human):
-	def __init__(self, name):
-		super().__init__(name)
-		self.money = 50
-	def work(self):
-		self.money += 10
-		print(self.name, 'is working')
-		print('Money: ', self.money)
+# class Man(Human):
+# 	def __init__(self, name):
+# 		super().__init__(name)
+# 		self.money = 50
+# 	def work(self):
+# 		self.money += 10
+# 		print(self.name, 'is working')
+# 		print('Money: ', self.money)
 
-human = Human('Bob')
-human.live()
-w1 = Woman('Clara')
-w1.live()
-w1.cook()
-m1 = Man('John')
-m1.live()
-m1.work()
+# human = Human('Bob')
+# human.live()
+# w1 = Woman('Clara')
+# w1.live()
+# w1.cook()
+# m1 = Man('John')
+# m1.live()
+# m1.work()
+
+# Создать класс Животное. От него наследуются классы Котик, Собачка и Хомячок. В классе есть 3 поля (характеристики) и 2 поведения (методы). В классах конкретных животных добавить по 1 дополнительному поведения
+
 # from random import *
 
 # class University:
