@@ -1,20 +1,112 @@
-num1 = num2 = sign = ''
-while num1 == '' or num2 == '' or sign == '':
-	try:
-		num1 = int(input('Number1: '))
-		sign = input('Sign: ')
-		num2 = int(input('Number2: '))
-		if num2 == 0 and sign == '/':
-			raise ZeroDivisionError
-	except ValueError:
-		print('Wrong value')
-	except ZeroDivisionError:
-		sign = ''
-		print("You can't divide by zero")
-	except:
-		print('Something is wrong!')
-	if sign == '+':
-		print(f"{num1} + {num2} = {num1+num2}")
+def angry(func):
+	def wrapper():
+		func()
+		print('he is angry')
+	return wrapper
+
+@angry
+def human():
+	print('this is human')
+
+human()
+
+# Создать еще 10 декораторов, которые будут дополнять функцию human. Например, это могут быть какие-то черты характера.
+
+# def timer(func):
+# 	def wrapper():
+# 		import time
+# 		start = time.time()
+# 		func()
+# 		end = time.time()
+# 		print('Time: ', end-start)
+# 	return wrapper
+
+# def logging(func):
+# 	def wrapper():
+# 		func()
+# 		print('this is log')
+# 	return wrapper
+
+# count = 0
+# def counter(func):
+# 	def wrapper():
+# 		global count
+# 		count+=1
+# 		print('Count:',count)
+# 	return wrapper
+
+# @counter
+# @timer
+# def webpage():
+# 	import requests
+# 	page = requests.get('https://docs.python.org/3/library/exceptions.html')
+# 	# print(page.text)
+
+# @counter
+# @logging
+# @timer
+# def ask():
+# 	a = input()
+
+# webpage()
+# webpage()
+# webpage()
+# webpage()
+
+# ask()
+
+
+# def salat(func):
+# 	def wrapper():
+# 		func()
+# 		print('salat')
+# 	return wrapper
+
+# def tomato(func):
+# 	def wrapper():
+# 		print('tomato')
+# 		func()
+# 	return wrapper
+
+# @tomato
+# @salat
+# def sandwich():
+# 	print('this is sandwich')
+
+# @salat
+# def burger():
+# 	print('this is burger')
+
+# sandwich()
+# burger()
+
+
+
+# try:
+# 	name = input('Name:')
+# 	if name.isalpha() == False:
+# 		raise ValueError
+# except ValueError:
+# 	name = ''
+# 	print('Only letters!')
+# print('Hello', name)
+# num1 = num2 = sign = ''
+# while num1 == '' or num2 == '' or sign == '':
+# 	try:
+# 		num1 = int(input('Number1: '))
+# 		sign = input('Sign: ')
+# 		num2 = int(input('Number2: '))
+# 		if num2 == 0 and sign ==  '/':
+# 			raise ZeroDivisionError
+# 	except ValueError:
+# 		print('Wrong value')
+# 	except ZeroDivisionError:
+# 		sign = ''
+# 		print("You can't divide by zero")
+# 	except:
+# 		print('Something is wrong!')
+# 	if sign == '+':
+# 		print(f"{num1} + {num2} = {num1+num2}")
 
 # Добавить оcтальные операции. Если должны произойти какие-то еще исключительные операции, то обработать их в try-except.
 # Сделать проверку на введенный знак. Доступны только арифметические!
